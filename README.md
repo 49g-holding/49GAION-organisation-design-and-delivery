@@ -8,7 +8,7 @@ The product repository of **49GAION Organisation Design and Delivery**, the firs
 - **Process and Position Design** designs how the work runs and the positions that carry it.
 - **Delivery and Implementation** takes the decided design into a running organisation.
 
-Each part is also a product on its own.
+Each part is built and kept on its own: Source Lifecycle and the Target Operating Model are offered alone, and Delivery and Implementation runs without the others.
 
 **What goes in.** The organisation's own documents and approved words, and a Design Request approved by its Requesting Authority.
 

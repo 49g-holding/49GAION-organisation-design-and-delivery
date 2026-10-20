@@ -27,6 +27,7 @@
    It adds no capability: its features are its parts' features (`49GAION/DR-0025`, item 3).
 3. **The level.** This product designs an organisation of human positions. Which positions an AI fills is the next level, outside this product (`49GAION/DR-0025`, item 5).
 4. **The shared test.** TEST-DESIGN-CHAIN v2, held in the Library register. This repository keeps no copy. Case 10 runs here on every pull request (`tools/check_pins.py`).
-5. **The Library pin.** Once merged, this blueprint is pinned in the Products section of `49GAION-protocol` `library/README.md`, by repository, path, version, commit and SHA-256. Where an assembly's blueprint lives is recorded in the 49GAION Standard by its own decision record (`upstream/PROPOSALS.md`, item 1).
+5. **The Library pin.** Once merged, this blueprint is proposed for pinning in the Products section of `49GAION-protocol` `library/README.md`, by repository, path, version, commit and SHA-256. Where an assembly's blueprint lives, and how a product repository is named, are for the 49GAION Standard to record (`upstream/PROPOSALS.md`, item 1).
+6. **Recorded before created.** This repository was recorded before it was created, as Naming Standard R9 asks of every repository; no rule yet says where a product repository is recorded or how it is named (`upstream/PROPOSALS.md`, item 1).
 
 *Powered by 49GAION*

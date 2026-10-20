@@ -10,7 +10,7 @@
 > - **Process and Position Design** (PPD) designs how the work runs and the positions that carry it;
 > - **Delivery and Implementation** (DI) takes the decided design into a running organisation, and runs and improves it with the organisation.
 >
-> Each of the four is also a product on its own. Together they are this product.
+> Each of the four is built and kept on its own: Source Lifecycle and the Target Operating Model are offered alone, and Delivery and Implementation runs without the others. Together they are this product.
 >
 > **What goes in.** The organisation's own documents, and what its people say once they have approved it. A Design Request, approved by the organisation's Requesting Authority, says what should be different. Answers to questions, asked only through Source Lifecycle. Optionally, the running work as an export by role-type and process, or a design made elsewhere.
 >
@@ -24,9 +24,9 @@
 >
 > **What it is for.** An organisation, new or existing, goes from its own sources to a working organisation of human positions, with every element traced to a source or a decision.
 >
-> **What it never does.** It never decides which positions an AI fills: that is the next level (§12). It never names or reads a person. It never decides for the organisation. AI prepares; human positions decide.
+> **What it never does.** It never decides which positions an AI fills: that is the next level (§12). No output names a person, and no stage reads who occupies a position. It never decides for the organisation. AI prepares; human positions decide.
 >
-> **How to start.** The organisation names its Requesting Authority, arranges the four accountable positions, connects the parts and approves a Design Request. Any stage may be used alone, and the organisation may stop after any stage (§8).
+> **How to start.** The organisation names its Requesting Authority, arranges the four accountable positions, connects the parts and approves a Design Request. The organisation may stop after any stage, and no stage waits for a later one (§8).
 
 ---
 
@@ -59,7 +59,7 @@
 
 ## 2. The parts, by pin
 
-The pins are in `pins/PINS.json` and equal the Library register at `32734f1`. `tools/check_pins.py` reads every file back at its commit and checks its SHA-256 (TEST-DESIGN-CHAIN v2, case 10).
+The pins are in `pins/PINS.json` and equal the Library register at `32734f1`. `tools/check_pins.py` reads every file back at its commit, checks its SHA-256, and checks that each part's pin equals its row in the Library register (TEST-DESIGN-CHAIN v2, case 10).
 
 | # | Part | In an `[ORG]AION` | Mother repository · path | Version | Commit | Blueprint SHA-256 | Library card | Fixed test |
 |---|---|---|---|---|---|---|---|---|
@@ -95,10 +95,10 @@ The order is Source Lifecycle, then the Target Operating Model, then Process and
 
 ### Step 2 · The operating model: Target Operating Model
 
-- **Starts** from one Work Item of the Requesting Authority's Cell that carries only the reference of an approved Design Request (TOM §1, §6). Gate T0 checks, among others, that the connections are signed, Source Lifecycle's card declares the sockets contract, and engines of two families are eligible (TOM Annex C.2).
-- **Reads** only sources served by reference from Source Lifecycle, sealed into an Input Pack. It asks what is missing only through Source Lifecycle's Chief of Staff, at most twelve rows a pass (TOM §4.3, §5.2; Protocol §19, item 2). Where the organisation admitted an export of its running work by role-type and process, it reads it as the activity profile; with none, it reads `no observation` (TOM Annex H.8).
+- **Starts** from one Work Item of the Requesting Authority's Cell that carries only the reference of an approved Design Request (TOM §1, §6). Gate T0 checks, among others, that the connections are signed, Source Lifecycle's card declares the sockets contract, and enough engines are eligible: at least three reviewer engines from at least two families, none of an author's family (TOM Annex C.2 (g); TOM H-05).
+- **Reads** only sources served by reference from Source Lifecycle, sealed into an Input Pack. It asks what is missing only through Source Lifecycle's Chief of Staff, at most twelve rows a pass (TOM §4.3, §5.2; Protocol §19, items 2 and 3). Where the organisation admitted an export of its running work by role-type and process, it reads it as the activity profile; with none, it reads `no observation` (TOM Annex H.8).
 - **Produces** the TOM Release: the Design Brief; the decided structure and slice; per entity, the Blueprint and the Rationale and Evidence Brief (capabilities with their delivery model and maturity, value streams with their criticality, decision domains, interfaces); hand-offs, counterparties and the legal and regulatory perimeter; the **role register** (role-types only); the strategy frame; the outside parties' journeys; the value case; the priority of every element; the activity profile; the walkthrough report and the quality checks (TOM `docs/OUTPUT.md`; Protocol §19, items 4 and 12).
-- **Decided** element by element by the Requesting Authority, `ACCEPT`, `CORRECT` or `REJECT`, each with a priority (must, should or could), then the value case and the final status. Purpose and values are signed by the GOV Cell. Silence decides nothing (TOM §5.9; Annex C.4).
+- **Decided** element by element by the Requesting Authority, `ACCEPT`, `CORRECT` or `REJECT`, each with a priority (must, should or could), then the value case and the final status. Purpose and values, where no source in force states them, are signed by the GOV Cell (Protocol §19, item 12). Silence decides nothing (TOM §5.9; Annex C.4).
 - **Filed** in Source Lifecycle as origin kind `operating model`. Once it reads back, a **release notice** goes to Process and Position Design (TOM step 8a; Protocol §21, item 3).
 
 ### Step 3 · Processes and positions: Process and Position Design
@@ -111,7 +111,7 @@ The order is Source Lifecycle, then the Target Operating Model, then Process and
 
 ### Step 4 · Into a running organisation: Delivery and Implementation
 
-- **Starts** in mode A from the PPD release notice. It reads the PPD release, and the TOM release it rests on, by reference from Source Lifecycle (DI §4.3, part 1).
+- **Starts** on the Requesting Authority's request, which opens the run, its mode and its scope (Protocol §20, item 2; DI H-09). In mode A, once the PPD release notice has arrived, it reads the PPD release, and the TOM release it rests on, by reference from Source Lifecycle (DI §4.3, part 1).
 - **Slice 1, Launch.** Admit, map, diagnose, prepare, decide and file:
   - the design map;
   - the gap report in two tiers;
@@ -148,10 +148,12 @@ The order is Source Lifecycle, then the Target Operating Model, then Process and
 | From | To | What passes | Contract (pinned in `pins/PINS.json`) | Signed by |
 |---|---|---|---|---|
 | Source Lifecycle | every later stage | sources by reference at a pinned snapshot; answers to needs requests; notices on supersession, revocation or reclassification; the write scope to file the stage's own origin kinds | the sockets contract: needs request, needs answer, needs status, Missing Report, source reference, filing receipt (drafts in `49g-holding/49aioc-tom` `302e98b`, named by hash in SL `contracts/README.md`; Proposed until SL H-02) | the Source Lifecycle Lead, at the tool gateway, as one organisation-design grant per stage: read, filing of its own kinds, needs requests (SL §5.8) |
-| Target Operating Model | Process and Position Design | the release notice: release ID, version, manifest hash, the filed reference, the final status; no release text | release notice (`library/contracts/release-notice.schema.json`) | the TOM Design Lead |
+| Target Operating Model | Process and Position Design | the release notice: the release (ID, version, manifest hash), the releases it rests on, the filed reference, the final status, the release it supersedes and the returns it answers; no release text (Protocol §21, item 3) | release notice (`library/contracts/release-notice.schema.json`) | the TOM Design Lead |
 | Process and Position Design | Delivery and Implementation | the release notice, naming the TOM release it rests on | release notice | the PPD Design Lead |
-| Process and Position Design | Target Operating Model | a design return | design return (`library/contracts/design-return.schema.json`) | on PPD's signed connection to TOM |
-| Delivery and Implementation | Process and Position Design; Target Operating Model | a design return | design return | on DI's signed connections |
+| Process and Position Design | Target Operating Model | a design return | design return (`library/contracts/design-return.schema.json`) | the TOM Design Lead: the connection that serves TOM's releases to PPD (TOM H-35; PPD H-06) |
+| Delivery and Implementation | Process and Position Design; Target Operating Model | a design return | design return | the PPD Design Lead for the connection that serves PPD's releases to DI (PPD H-16); the TOM Design Lead for the connection that serves TOM's releases to DI (TOM H-35; DI H-05) |
+
+A return travels on the same connection as the notice it answers: each connection is signed by the `[ORG]HOAC-ACS` position over the stage whose releases it serves (Protocol §21, item 7).
 
 **What each stage may file in Source Lifecycle** (Protocol §13, item 9; SL §5.8):
 
@@ -204,11 +206,13 @@ Each part keeps its own Configuration (each part's §15). The product sets only 
 | `requesting_authority_cell` | one Cell for all three design stages: the GOV Cell or one human Cell it delegated the design decisions to | the GOV position | TOM, PPD, DI |
 | The four accountable positions | arranged before the first run | the Cell carrying `[ORG]HOAC-TM` | all |
 | `return_round_deadline`, `return_rounds_max` | one value across TOM, PPD and DI, so that every return in the chain ends on the same rule | the Cell carrying `[ORG]HOAC-TM` | TOM, PPD, DI |
-| `review_engines`, `review_families_min`, `reduced_review_permitted` | at least 3 engines from at least 2 families; reduced review `no` | the Cell carrying `[ORG]HOAC-TM` | TOM, PPD, DI |
-| `rows_per_pass`, `non_response_passes` | at most 12 rows a pass, for every stage, since every question goes through one Chief of Staff of Source Lifecycle | the Cell carrying `[ORG]HOAC-TM` | TOM, PPD, DI |
+| `review_engines`, `review_families_min` | the same floor in every stage: at least 3 engines from at least 2 families | each part's own Lead, within the floor (each part's §15) | TOM, PPD, DI |
+| `reduced_review_permitted` | `no` in every stage | the Cell carrying `[ORG]HOAC-TM` | TOM, PPD, DI |
+| `rows_per_pass` | at most 12 rows a pass in every stage, since every question goes through Source Lifecycle's one Chief of Staff | each part's own Lead, within the floor | TOM, PPD, DI |
+| `non_response_passes` | one value across the stages | the Cell carrying `[ORG]HOAC-TM` | TOM, PPD, DI |
 | The engine register | one register, at the tool gateway, for every stage | the GOV position with the Cell carrying `[ORG]HOAC-TM` | all |
 | The pins of the parts | `pins/PINS.json` | 49GAION, by pull request | all |
-| Where the product starts and stops | §8 | the Requesting Authority | all |
+| Which parts are installed, and which runs are opened | §8 | installing: the Cell carrying `[ORG]HOAC-TM` (TOM H-10, PPD H-03, DI H-03); opening a run: the Requesting Authority | all |
 
 **The parameters an organisation chooses for each use** (the parts' own settings, named here so the whole is visible):
 
@@ -216,7 +220,7 @@ Each part keeps its own Configuration (each part's §15). The product sets only 
 |---|---|---|
 | Run depth | the Design Request, field 9; capped by `run_depth_permitted` | light, standard (default) or deep (TOM Annex F) |
 | Cost limit | `budget_cap`, `review_budget_per_run` | set by the Cell carrying `[ORG]HOAC-TM`; at the limit the run is held |
-| Entities in view and slice | the Design Request; TOM S1 and §5.9 | one release covers one slice; a continuation run carries earlier releases forward by hash |
+| Entities in view and slice | the Design Request; TOM S1 (entities) and S2 (the slice; TOM H-21) | a continuation release holds every slice designed so far, carried forward by hash (TOM `docs/OUTPUT.md` §14) |
 | Mode into delivery | DI `modes_enabled` | A (the decided releases), B (a design made elsewhere), C (no design, a light design with the owner; enabled only after DI H-21) |
 | Default confidentiality and the contributor agreement | Source Lifecycle | set by the GOV Cell (SL H-03, H-04) |
 | Reference models | each design stage's catalogue pin | unavailable, or a pin by commit and SHA-256; a method, never evidence |
@@ -227,7 +231,7 @@ Each part keeps its own Configuration (each part's §15). The product sets only 
 
 ## 8. Ways to use the product
 
-Any stage may be used alone, and the organisation may stop after any stage (Protocol §21, item 1).
+The organisation may stop after any stage, and no stage waits for a later one (Protocol §21, item 1). Every stage after the first reads Source Lifecycle; Process and Position Design needs a decided TOM release, and Delivery and Implementation in mode A needs both releases (`upstream/PROPOSALS.md`, item 5).
 
 | Use | Stages | Output |
 |---|---|---|
@@ -235,12 +239,12 @@ Any stage may be used alone, and the organisation may stop after any stage (Prot
 | **Design only** | SL → TOM → PPD | a decided operating model, processes and positions; no launch |
 | **Operating model only** | SL → TOM | a decided operating model, or only its decided Design Brief, or a Readiness Report (TOM `docs/OUTPUT.md` §14) |
 | **Bring your own design** | SL → DI (mode B) | a design made elsewhere, mapped onto the structure of positions and processes without rewriting it, taken into a running organisation |
-| **Small business** | SL → DI (mode C) | a light design built with the owner, every element provisional, taken into a running organisation; grows into mode A at its growth triggers |
+| **Small business** | SL → DI (mode C) | a light design built with the owner, every element provisional, taken into a running organisation; grows into mode A at its growth triggers. Mode C stays off until DI H-21 |
 | **Sources only** | SL | the organisation's sources, dictionary and essentials, as a product on its own |
 
 **Another source in place of Source Lifecycle, in later phases.** In the stages after the first, another source of documents or knowledge may stand beside Source Lifecycle, read only, through the reading stage's own adapter, once it uses the same sockets and passes the joining test. It answers by reference (ID, version and hash), "held" or "not held", within the approved scope (Protocol §13, item 7; SL §2.2). Asking and filing stay with Source Lifecycle. A source that **replaces** Source Lifecycle needs the Protocol first to name the new asking route (Protocol §13, item 10); none is named yet (`upstream/PROPOSALS.md`, item 3).
 
-**A part replaced by another part.** Any part may be replaced by one that offers the same ports and contracts, once it passes the joining test (Standard §3.2, item 4; Protocol §11, item 1). Its pin moves here, and the shared test runs again.
+**A part replaced by another part.** Built like a puzzle (Protocol §2): any other part may be replaced by one that offers the same ports and contracts, once it passes the joining test (Standard §3.2, item 4; Protocol §11, item 1). Its pin moves here, and the shared test runs again.
 
 ---
 
@@ -248,9 +252,9 @@ Any stage may be used alone, and the organisation may stop after any stage (Prot
 
 | Position | Decides |
 |---|---|
-| The GOV position | names the Requesting Authority; signs purpose and values; sets the default confidentiality and the contributor agreement; the engine register, with the Cell carrying `[ORG]HOAC-TM` |
-| The Cell carrying `[ORG]HOAC-TM` | arranges the four accountable positions; installs the parts; sets the budgets, the permitted run depth, the review settings, the return settings and the modes of delivery |
-| Each accountable position over a part | signs the connections its part serves (§4) |
+| The GOV position | names the Requesting Authority; signs purpose and values where no source in force states them; sets the default confidentiality and the contributor agreement; the engine register, with the Cell carrying `[ORG]HOAC-TM` |
+| The Cell carrying `[ORG]HOAC-TM` | arranges the four accountable positions; installs the parts; sets the budgets, the permitted run depth, reduced review, the non-response and return settings, and the modes of delivery |
+| Each accountable position over a part (its Lead) | signs the connections that serve its part's releases (§4); sets its part's review engines and rows per pass within the product's floor; attests its part's method |
 | The Requesting Authority | approves the Design Request; opens each run; decides every element row and the final status of every release; decides each return row; opens the delivery service |
 | The position that holds data protection (HF-17) | admits each export of the running work, after its impact assessment |
 | The go or no-go position | decides the go-live |
@@ -291,8 +295,8 @@ These come from the parts' own texts. Until each holds, the joining test of the 
 1. **Source Lifecycle adopts its sockets contract** (SL H-02, PRD D-20). Until then the Target Operating Model's gate T0 fails with `SL contract not supported`.
 2. **Each stage's additions to Source Lifecycle are accepted**: TOM's SL-A1 to SL-A13 (TOM H-15), PPD's and DI's origin kinds (PPD H-05, DI H-04).
 3. **The connections are signed** by the accountable positions (§4).
-4. **In an `[ORG]AION`**, the Charter is installed first and holds the tool gateway, the records and the Work Item queue (Protocol §23). Outside an `[ORG]AION`, each part runs behind its own gateway, which fails closed.
-5. **Engines from at least two families** are eligible in the engine register.
+4. **In an `[ORG]AION`**, the Charter is installed first and holds the tool gateway, the records and the Work Item queue (Protocol §23). Outside an `[ORG]AION`, Delivery and Implementation runs behind its own gateway, which fails closed (DI §8); Source Lifecycle may run with no gateway (SL §15, `gateway present: no`; SL H-05); the Target Operating Model and Process and Position Design assume one.
+5. **Enough engines are eligible** in the engine register: at least three reviewer engines from at least two families, none of an author's family; with two author families that means at least four families (TOM Annex C.2 (g); TOM H-05).
 6. **The positions are arranged** and the Requesting Authority is named (§3, step 0).
 
 ---
