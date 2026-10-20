@@ -1,0 +1,135 @@
+{
+  "product": "49GAION Organisation Design and Delivery",
+  "product_blueprint": "blueprint/PRODUCT-BLUEPRINT.md",
+  "product_version": "v0.1.0",
+  "note": "The parts and contracts of this product, each by pin: repository, path, version, commit and SHA-256 (49GAION/DR-0025, item 3). The pins equal the Library register of 49GAION-protocol at 32734f1. tools/check_pins.py reads every file back at its commit, checks its SHA-256, and checks each part's pin against its row in the Library register at the shared test's commit (TEST-DESIGN-CHAIN v2, case 10). A new version of a part moves only its pin here, and the shared test runs again.",
+  "parts": [
+    {
+      "order": 1,
+      "part": "49GAION Source Lifecycle",
+      "in_an_org_aion": "[ORG]AIOC-SL",
+      "repository": "49g-holding/49GAION-source-lifecycle",
+      "path": "blueprint/SL-BLUEPRINT.md",
+      "version": "v0.1.4",
+      "commit": "65d1b76d17e4c24826c6cefabc4c57a91a9530fe",
+      "sha256": "e097643f50d25a66bbd9ec824d1f06a934431989578bf8a550d6c6a2f33906c4",
+      "library_card": "source-lifecycle.part-card.json v4",
+      "fixed_test": "TEST-SL v1 (95 cases), keeping TEST-SOURCE-LIFECYCLE v4"
+    },
+    {
+      "order": 2,
+      "part": "49GAION Target Operating Model",
+      "in_an_org_aion": "[ORG]AIOC-TOM",
+      "repository": "49g-holding/49aioc-tom",
+      "path": "blueprint/TOM-BLUEPRINT.md",
+      "version": "v0.6.1",
+      "commit": "302e98b4937609484adb5164c20b5ef22211c411",
+      "sha256": "a8be34aad77e698566706762b9578a1f94ff4fa72eac3b303d082c9525517f15",
+      "library_card": "target-operating-model.part-card.json v3",
+      "fixed_test": "TEST-TOM v5 (123 cases), keeping TEST-TARGET-OPERATING-MODEL v3"
+    },
+    {
+      "order": 3,
+      "part": "49GAION Process and Position Design",
+      "in_an_org_aion": "[ORG]AIOC-PPD",
+      "repository": "49g-holding/49aioc-ppd",
+      "path": "blueprint/PPD-BLUEPRINT.md",
+      "version": "v0.5.1",
+      "commit": "bba0d0648dc1a6fdf31580cf4d9d6bad1bb9c7c9",
+      "sha256": "fb8179eab97013d4b718abb713edda9e5e904e482dd251f435955800aec72ad4",
+      "library_card": "process-and-position-design.part-card.json v4",
+      "fixed_test": "TEST-PPD v3 (110 live cases); the Library card names TEST-PROCESS-AND-POSITION-DESIGN v4, which the mother maps only at v2 (upstream/PROPOSALS.md, item 8)"
+    },
+    {
+      "order": 4,
+      "part": "49GAION Delivery and Implementation",
+      "in_an_org_aion": "[ORG]AIOC-DI",
+      "repository": "49g-holding/49aioc-di",
+      "path": "blueprint/DI-BLUEPRINT.md",
+      "version": "v0.2.1",
+      "commit": "44d7dbfd1ce5bbd9a829b398b05672e334bebdb5",
+      "sha256": "b1b22ca74f0a6596fa7a7445d14beaa8fe91d0c50c7edaffa5cfaf6eb0295515",
+      "library_card": "delivery-and-implementation.part-card.json v3",
+      "fixed_test": "TEST-DI v1 (94 cases), keeping TEST-DELIVERY-AND-IMPLEMENTATION v1; the Library card names v3 (upstream/PROPOSALS.md, item 8)"
+    }
+  ],
+  "contracts": [
+    {
+      "contract": "release notice",
+      "repository": "49g-holding/49GAION-protocol",
+      "path": "library/contracts/release-notice.schema.json",
+      "commit": "edfd44531370cbe87aa30fa4ea65423577eb7a02",
+      "sha256": "54ebd3408b33de5c36b095d69691f09d60c10e9d6e7f34435eb9d980155455d9",
+      "joins": "each stage to the next: TOM to PPD, PPD to DI"
+    },
+    {
+      "contract": "design return",
+      "repository": "49g-holding/49GAION-protocol",
+      "path": "library/contracts/design-return.schema.json",
+      "commit": "5ac8aeda8b7f17e784728d575bafd04163239e5e",
+      "sha256": "0c951a9f2ca31f98e81563b88661136b1462c8da66910cf6722507a7ace667a5",
+      "joins": "each later stage to the stage whose release it reads: PPD to TOM, DI to PPD, DI to TOM"
+    },
+    {
+      "contract": "sockets contract: needs request",
+      "repository": "49g-holding/49aioc-tom",
+      "path": "contracts/needs-request.schema.json",
+      "commit": "302e98b4937609484adb5164c20b5ef22211c411",
+      "sha256": "5293e10c6ee24dd38784628b415e7ed8e470f1b7c695aa53dea17e684345d4e4",
+      "joins": "Source Lifecycle to every stage after it",
+      "note": "Proposed until Source Lifecycle adopts the sockets contract (its H-02). Named by hash in contracts/README.md of 49GAION-source-lifecycle at 30c177a; at the blueprint pin 65d1b76 that README still named the Target Operating Model v0.6.0 (a8445cb), with another needs-request hash. The blueprint is byte-identical at both commits."
+    },
+    {
+      "contract": "sockets contract: needs answer",
+      "repository": "49g-holding/49aioc-tom",
+      "path": "contracts/needs-answer.schema.json",
+      "commit": "302e98b4937609484adb5164c20b5ef22211c411",
+      "sha256": "a36a4cbe8add05f67c14ead05c26e068fe52ca55f1113f317ce9fb601371beb1",
+      "joins": "Source Lifecycle to every stage after it",
+      "note": "Proposed until Source Lifecycle adopts the sockets contract (its H-02). Named by hash in contracts/README.md of 49GAION-source-lifecycle at 30c177a; at the blueprint pin 65d1b76 that README still named the Target Operating Model v0.6.0 (a8445cb), with another needs-request hash. The blueprint is byte-identical at both commits."
+    },
+    {
+      "contract": "sockets contract: needs status",
+      "repository": "49g-holding/49aioc-tom",
+      "path": "contracts/needs-status.schema.json",
+      "commit": "302e98b4937609484adb5164c20b5ef22211c411",
+      "sha256": "5b9a397b888455d5e881b7cdbb1c2d3dbc8e4bbfdc9b1fa70a99da9c24aa44f2",
+      "joins": "Source Lifecycle to every stage after it",
+      "note": "Proposed until Source Lifecycle adopts the sockets contract (its H-02). Named by hash in contracts/README.md of 49GAION-source-lifecycle at 30c177a; at the blueprint pin 65d1b76 that README still named the Target Operating Model v0.6.0 (a8445cb), with another needs-request hash. The blueprint is byte-identical at both commits."
+    },
+    {
+      "contract": "sockets contract: Missing Report",
+      "repository": "49g-holding/49aioc-tom",
+      "path": "contracts/missing-report.schema.json",
+      "commit": "302e98b4937609484adb5164c20b5ef22211c411",
+      "sha256": "bce0dc4e66a01001a8700ce4ab301c0d47ec0f3efb2316931091df23dd904f11",
+      "joins": "Source Lifecycle to every stage after it",
+      "note": "Proposed until Source Lifecycle adopts the sockets contract (its H-02). Named by hash in contracts/README.md of 49GAION-source-lifecycle at 30c177a; at the blueprint pin 65d1b76 that README still named the Target Operating Model v0.6.0 (a8445cb), with another needs-request hash. The blueprint is byte-identical at both commits."
+    },
+    {
+      "contract": "sockets contract: source reference",
+      "repository": "49g-holding/49aioc-tom",
+      "path": "contracts/source-reference.schema.json",
+      "commit": "302e98b4937609484adb5164c20b5ef22211c411",
+      "sha256": "e9e2f4fe45be37307eaa4dbfb9abb2f48b04a5838221478c8b0ddfeb70624b93",
+      "joins": "Source Lifecycle to every stage after it",
+      "note": "Proposed until Source Lifecycle adopts the sockets contract (its H-02). Named by hash in contracts/README.md of 49GAION-source-lifecycle at 30c177a; at the blueprint pin 65d1b76 that README still named the Target Operating Model v0.6.0 (a8445cb), with another needs-request hash. The blueprint is byte-identical at both commits."
+    },
+    {
+      "contract": "sockets contract: filing receipt",
+      "repository": "49g-holding/49aioc-tom",
+      "path": "contracts/tom-filing-receipt.schema.json",
+      "commit": "302e98b4937609484adb5164c20b5ef22211c411",
+      "sha256": "d2050bcef062ffd406dcba3dc7eee3a3617428179b430ec91816b250040183f3",
+      "joins": "Source Lifecycle to every stage after it",
+      "note": "Proposed until Source Lifecycle adopts the sockets contract (its H-02). Named by hash in contracts/README.md of 49GAION-source-lifecycle at 30c177a; at the blueprint pin 65d1b76 that README still named the Target Operating Model v0.6.0 (a8445cb), with another needs-request hash. The blueprint is byte-identical at both commits."
+    }
+  ],
+  "shared_test": {
+    "test": "TEST-DESIGN-CHAIN v2",
+    "repository": "49g-holding/49GAION-protocol",
+    "path": "library/README.md",
+    "commit": "32734f1e50dfc7e0670e5eb82786f216e3cea57c",
+    "cases": 15
+  }
+}
