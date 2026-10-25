@@ -24,7 +24,7 @@ The one-page summary is at the top of the blueprint.
 
 | Path | What it is |
 |---|---|
-| [`blueprint/PRODUCT-BLUEPRINT.md`](blueprint/PRODUCT-BLUEPRINT.md) | the product blueprint, `v0.1.0`: the parts by pin, how they combine and work, the input, the output, what it is for, what it sets, the ways to use it, the shared test |
+| [`blueprint/PRODUCT-BLUEPRINT.md`](blueprint/PRODUCT-BLUEPRINT.md) | the product blueprint, `v0.1.1`: the parts by pin, how they combine and work, the input, the output, what it is for, what it sets, the ways to use it, the shared test |
 | [`pins/PINS.json`](pins/PINS.json) | the four parts and the contracts, each by repository, path, version, commit and SHA-256 |
 | [`tools/check_pins.py`](tools/check_pins.py) | reads every pin back at its commit and checks its SHA-256 (TEST-DESIGN-CHAIN v2, case 10) |
 | [`decisions/`](decisions/) | the decision records of this repository |
@@ -32,7 +32,7 @@ The one-page summary is at the top of the blueprint.
 
 ## Where other things live
 
-- **Each part** in its own mother repository, pinned in `pins/PINS.json`: `49g-holding/49GAION-source-lifecycle`, `49g-holding/49aioc-tom`, `49g-holding/49aioc-ppd`, `49g-holding/49aioc-di`.
+- **Each part** in its own mother repository, pinned in `pins/PINS.json`: `49g-holding/49GAION-source-lifecycle`, `49g-holding/49GAION-target-operating-model`, `49g-holding/49GAION-process-and-position-design`, `49g-holding/49GAION-delivery-and-implementation`.
 - **The shared test**, TEST-DESIGN-CHAIN v2, and the Library register: `49GAION-protocol`, `library/README.md`.
 - **The rules**: the 49GAION Standard (`49GAION`) and the Operating Protocol (`49GAION-protocol`), §13, §17, §19, §20 and §21.
 - **An organisation's own copy** of the product: in that organisation's own repositories, never here.
