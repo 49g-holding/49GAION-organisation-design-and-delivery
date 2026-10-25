@@ -10,5 +10,6 @@
 | Organisation names | `no-org-names` scanner of `49GAION-protocol`, 20 October 2026: **0 hits** |
 | Before the first real run | blueprint §11 |
 | Instances | none |
+| Readings | `49GAION/DR-0041`, the complete definition of 49GAION: this repository is read with it (`decisions/DR-0002`), unreleased |
 
 *Powered by 49GAION*
