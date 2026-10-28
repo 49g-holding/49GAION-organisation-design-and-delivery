@@ -4,6 +4,8 @@ The product repository of **49GAION Organisation Design and Delivery**, the firs
 
 > **Reading (49GAION DR-0041).** The complete definition of 49GAION, approved by its governing seat on 25 October 2026, is `49GAION-FRAMEWORK.md` in `github.com/49g-holding/49GAION`. Where this repository differs from it, the definition governs, and this text is read with it. This product designs an organisation of human positions; how human and how much AI the organisation is, is the `[ORG]AION`'s own design work, prepared by it and decided by the governance seat. Every rule here that names `[ORG]AIOC-OCO` reads as the Top Management Group, the hub of the operation, human and AI. The readings are in [`decisions/DR-0002`](decisions/DR-0002-the-readings-of-dr-0041.md). Nothing here is removed.
 
+> **Reading (49GAION DR-0048, DR-0049; `decisions/DR-0004`).** Only AIOCs and HOAC positions: every human place here is a position, and who holds it, and how, is the organisation's own mechanism, outside the system. The acting filler, deputies of human seats and `appoint-acting-filler` are withdrawn.
+
 **What the product is.** Four Library parts, placed side by side and connected:
 - **Source Lifecycle** keeps the organisation's own sources.
 - **Target Operating Model** designs what the organisation does and how it is governed.

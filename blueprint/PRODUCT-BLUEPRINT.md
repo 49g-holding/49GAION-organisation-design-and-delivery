@@ -83,7 +83,7 @@ The order is Source Lifecycle, then the Target Operating Model, then Process and
 | What | Who | Rule |
 |---|---|---|
 | Name the **Requesting Authority**: the Cell carrying `[ORG]HOAC-GOV`, or a human Cell it delegates the design decisions to | the GOV position | TOM H-01, PPD H-01, DI H-01. One Requesting Authority for the whole product (§7) |
-| Arrange the four accountable positions, each carrying `[ORG]HOAC-ACS`: the Source Lifecycle Lead `[ORG]CELL-SLL`, the TOM Design Lead `[ORG]CELL-TDL`, the PPD Design Lead `[ORG]CELL-PDL`, the DI Delivery Lead `[ORG]CELL-DDL` | the Cell carrying `[ORG]HOAC-TM` | SL H-01, TOM H-11, PPD H-02, DI H-02. Positions only; who occupies them is top management's own mechanism |
+| The four accountable positions, each carrying `[ORG]HOAC-ACS`: the Source Lifecycle Lead `[ORG]CELL-SLL`, the TOM Design Lead `[ORG]CELL-TDL`, the PPD Design Lead `[ORG]CELL-PDL`, the DI Delivery Lead `[ORG]CELL-DDL` | who holds them, and how: the organisation's own mechanism, outside the system | SL H-01, TOM H-11, PPD H-02, DI H-02. Positions only (`49GAION/DR-0049`) |
 | Install the four parts, each through OCO | the Cell carrying `[ORG]HOAC-TM` | Standard §5.3; each part's §13 |
 | Sign the connections (§4) | the `[ORG]HOAC-ACS` position over the stage whose releases each connection serves | Protocol §21, item 7; listed type `connect-external-port` |
 | Set the product's parameters (§7) | as §7 says | each part's §15 |
