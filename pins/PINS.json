@@ -1,8 +1,8 @@
 {
   "product": "49GAION Organisation Design and Delivery",
   "product_blueprint": "blueprint/PRODUCT-BLUEPRINT.md",
-  "product_version": "v0.1.1",
-  "note": "The parts and contracts of this product, each by pin: repository, path, version, commit and SHA-256 (49GAION/DR-0025, item 3). The pins equal the Library register of 49GAION-protocol at 26d7443. tools/check_pins.py reads every file back at its commit, checks its SHA-256, and checks each part's pin against its row in the Library register at the shared test's commit (TEST-DESIGN-CHAIN v2, case 10). A new version of a part moves only its pin here, and the shared test runs again. On 25 October 2026 (49GAION/DR-0044; decisions/DR-0003) the pins of three parts, and of the sockets contract drafts, moved to the parts' own mother repositories at their merged commits; every SHA-256 is unchanged.",
+  "product_version": "v0.1.2",
+  "note": "The parts and contracts of this product, each by pin: repository, path, version, commit and SHA-256 (49GAION/DR-0025, item 3). The pins equal the Library register of 49GAION-protocol at d44e4fc. tools/check_pins.py reads every file back at its commit, checks its SHA-256, and checks each part's pin against its row in the Library register at the shared test's commit (TEST-DESIGN-CHAIN v2, case 10). A new version of a part moves only its pin here, and the shared test runs again. On 25 October 2026 (49GAION/DR-0044; decisions/DR-0003) the pins of three parts, and of the sockets contract drafts, moved to the parts' own mother repositories at their merged commits; every SHA-256 is unchanged. On 29 October 2026 (decisions/DR-0005) the pins of the four parts moved to their releases that carry 49GAION/DR-0049 (positions only), at their merged commits, with their new SHA-256; the contract pins are unchanged.",
   "parts": [
     {
       "order": 1,
@@ -10,9 +10,9 @@
       "in_an_org_aion": "[ORG]AIOC-SL",
       "repository": "49g-holding/49GAION-source-lifecycle",
       "path": "blueprint/SL-BLUEPRINT.md",
-      "version": "v0.1.4",
-      "commit": "65d1b76d17e4c24826c6cefabc4c57a91a9530fe",
-      "sha256": "e097643f50d25a66bbd9ec824d1f06a934431989578bf8a550d6c6a2f33906c4",
+      "version": "v0.1.5",
+      "commit": "f01c8129e4811432b0cbf2b2466e2c2f76abda29",
+      "sha256": "0fb548143cd566bed0d74388cee348cfc70a1a3979ba5798c04adb4c65e265ec",
       "library_card": "source-lifecycle.part-card.json v4",
       "fixed_test": "TEST-SL v1 (95 cases), keeping TEST-SOURCE-LIFECYCLE v4"
     },
@@ -22,9 +22,9 @@
       "in_an_org_aion": "[ORG]AIOC-TOM",
       "repository": "49g-holding/49GAION-target-operating-model",
       "path": "blueprint/TOM-BLUEPRINT.md",
-      "version": "v0.6.1",
-      "commit": "4271eb58965dc512bb8ede3da80898d06c935f3f",
-      "sha256": "a8be34aad77e698566706762b9578a1f94ff4fa72eac3b303d082c9525517f15",
+      "version": "v0.6.2",
+      "commit": "949db9bad9bde5b0e69a077336419a989f90dfdc",
+      "sha256": "a284e7b6c9804c67e87f7330016c4d0f262d4bb3b39017ba534658abbf292bee",
       "library_card": "target-operating-model.part-card.json v3",
       "fixed_test": "TEST-TOM v5 (123 cases), keeping TEST-TARGET-OPERATING-MODEL v3"
     },
@@ -34,9 +34,9 @@
       "in_an_org_aion": "[ORG]AIOC-PPD",
       "repository": "49g-holding/49GAION-process-and-position-design",
       "path": "blueprint/PPD-BLUEPRINT.md",
-      "version": "v0.5.1",
-      "commit": "cfad1c5c650b6a42e8c48e611f2f136e03432073",
-      "sha256": "fb8179eab97013d4b718abb713edda9e5e904e482dd251f435955800aec72ad4",
+      "version": "v0.5.2",
+      "commit": "5ffe28bc74cb2f260fd44c903cf3b0ba27abdf45",
+      "sha256": "41ec90ac4207863e584d814c46dbe745e63d5c2a62558894d2c7cf1497057df2",
       "library_card": "process-and-position-design.part-card.json v4",
       "fixed_test": "TEST-PPD v3 (110 live cases); the Library card names TEST-PROCESS-AND-POSITION-DESIGN v4, which the mother maps only at v2 (upstream/PROPOSALS.md, item 8)"
     },
@@ -46,9 +46,9 @@
       "in_an_org_aion": "[ORG]AIOC-DI",
       "repository": "49g-holding/49GAION-delivery-and-implementation",
       "path": "blueprint/DI-BLUEPRINT.md",
-      "version": "v0.2.1",
-      "commit": "ffec2364110e00aa21239acf8014390b3511f0b4",
-      "sha256": "b1b22ca74f0a6596fa7a7445d14beaa8fe91d0c50c7edaffa5cfaf6eb0295515",
+      "version": "v0.2.2",
+      "commit": "09516a2eab19f0f159d1284c02441ca4cf684899",
+      "sha256": "21202e712d4982acdc904b23478d33fbfc532c95a8c6cbcf4800b5b2304e3116",
       "library_card": "delivery-and-implementation.part-card.json v3",
       "fixed_test": "TEST-DI v1 (94 cases), keeping TEST-DELIVERY-AND-IMPLEMENTATION v1; the Library card names v3 (upstream/PROPOSALS.md, item 8)"
     }
@@ -129,7 +129,7 @@
     "test": "TEST-DESIGN-CHAIN v2",
     "repository": "49g-holding/49GAION-protocol",
     "path": "library/README.md",
-    "commit": "26d7443dd98112117fcd39f4041c0fc6ae737cad",
+    "commit": "d44e4fc9dee6222fc5d49224c214f3ccbb84d6f5",
     "cases": 15
   }
 }

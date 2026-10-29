@@ -1,4 +1,4 @@
-# 49GAION Organisation Design and Delivery · product blueprint · `v0.1.1`
+# 49GAION Organisation Design and Delivery · product blueprint · `v0.1.2`
 
 **Draft, 20 October 2026.** The blueprint of the first assembly of the 49GAION Library (`49GAION/DR-0025`; Standard §3.1, item 12). It lists the product's parts by pin, how they connect, what goes in, what comes out, what the product is for, what the product itself sets, and its one shared test. The product adds no capability of its own: its features are its parts' features. Every rule here rests on a 49GAION text or on a part's blueprint, cited by section. Nothing here has run. Every fixed test reads `NOT_RUN` until the part is built and run; that is the policy of the Library, not a defect.
 
@@ -45,7 +45,7 @@
 | Shared test | TEST-DESIGN-CHAIN v2, 15 cases, in the Library register (§10) |
 | This repository | `github.com/49g-holding/49GAION-organisation-design-and-delivery`, public. It holds this blueprint and its pins only; no organisation's data, no copy of a part (`decisions/DR-0001`) |
 | In an organisation | each organisation installs the four parts as its own AIOCs, `[ORG]AIOC-SL`, `[ORG]AIOC-TOM`, `[ORG]AIOC-PPD` and `[ORG]AIOC-DI`, each from its mother, and keeps its own values in its own repositories. Its branded name is its own (for example `[ORG]AION Organisation Design and Delivery`) |
-| Version and status | `v0.1.1` · draft |
+| Version and status | `v0.1.2` · draft |
 | Mother texts | the Standard §3.1, items 3 to 12; the Operating Protocol §13, §17, §19, §20 and §21; the Library register, `49GAION-protocol` `library/README.md` at `32734f1` |
 
 ---
@@ -61,14 +61,14 @@
 
 ## 2. The parts, by pin
 
-The pins are in `pins/PINS.json` and equal the Library register at `26d7443`. `tools/check_pins.py` reads every file back at its commit, checks its SHA-256, and checks that each part's pin equals its row in the Library register (TEST-DESIGN-CHAIN v2, case 10).
+The pins are in `pins/PINS.json` and equal the Library register at `d44e4fc`. `tools/check_pins.py` reads every file back at its commit, checks its SHA-256, and checks that each part's pin equals its row in the Library register (TEST-DESIGN-CHAIN v2, case 10).
 
 | # | Part | In an `[ORG]AION` | Mother repository · path | Version | Commit | Blueprint SHA-256 | Library card | Fixed test |
 |---|---|---|---|---|---|---|---|---|
-| 1 | 49GAION Source Lifecycle | `[ORG]AIOC-SL` | `49g-holding/49GAION-source-lifecycle` · `blueprint/SL-BLUEPRINT.md` | v0.1.4 | `65d1b76` | `e097643f…06c4` | v4 | TEST-SL v1, 95 cases |
-| 2 | 49GAION Target Operating Model | `[ORG]AIOC-TOM` | `49g-holding/49GAION-target-operating-model` · `blueprint/TOM-BLUEPRINT.md` | v0.6.1 | `4271eb5` | `a8be34aa…7f15` | v3 | TEST-TOM v5, 123 cases |
-| 3 | 49GAION Process and Position Design | `[ORG]AIOC-PPD` | `49g-holding/49GAION-process-and-position-design` · `blueprint/PPD-BLUEPRINT.md` | v0.5.1 | `cfad1c5` | `fb8179ea…2ad4` | v4 | TEST-PPD v3, 110 live cases |
-| 4 | 49GAION Delivery and Implementation | `[ORG]AIOC-DI` | `49g-holding/49GAION-delivery-and-implementation` · `blueprint/DI-BLUEPRINT.md` | v0.2.1, complete (slices 1 to 4) | `ffec236` | `b1b22ca7…5515` | v3 | TEST-DI v1, 94 cases |
+| 1 | 49GAION Source Lifecycle | `[ORG]AIOC-SL` | `49g-holding/49GAION-source-lifecycle` · `blueprint/SL-BLUEPRINT.md` | v0.1.5 | `f01c812` | `0fb54814…65ec` | v4 | TEST-SL v1, 95 cases |
+| 2 | 49GAION Target Operating Model | `[ORG]AIOC-TOM` | `49g-holding/49GAION-target-operating-model` · `blueprint/TOM-BLUEPRINT.md` | v0.6.2 | `949db9b` | `a284e7b6…2bee` | v3 | TEST-TOM v5, 123 cases |
+| 3 | 49GAION Process and Position Design | `[ORG]AIOC-PPD` | `49g-holding/49GAION-process-and-position-design` · `blueprint/PPD-BLUEPRINT.md` | v0.5.2 | `5ffe28b` | `41ec90ac…7df2` | v4 | TEST-PPD v3, 110 live cases |
+| 4 | 49GAION Delivery and Implementation | `[ORG]AIOC-DI` | `49g-holding/49GAION-delivery-and-implementation` · `blueprint/DI-BLUEPRINT.md` | v0.2.2, complete (slices 1 to 4) | `09516a2` | `21202e71…3116` | v3 | TEST-DI v1, 94 cases |
 
 **A new version of a part** moves only its pin here; the shared test runs again (`49GAION/DR-0025`, item 3). The part's own blueprint governs everything about the part; this text only says how the parts are put together.
 
@@ -266,7 +266,7 @@ The organisation may stop after any stage, and no stage waits for a later one (P
 
 ## 10. The shared test
 
-**TEST-DESIGN-CHAIN v2**, 15 cases, held in the Library register (`49GAION-protocol` `library/README.md`, at `26d7443`). It is the product's one shared test (`49GAION/DR-0025`, item 4). This repository keeps no copy. Each part's own fixed test passes first (case 11). Every case reads `NOT_RUN` until the parts are built and run.
+**TEST-DESIGN-CHAIN v2**, 15 cases, held in the Library register (`49GAION-protocol` `library/README.md`, at `d44e4fc`). It is the product's one shared test (`49GAION/DR-0025`, item 4). This repository keeps no copy. Each part's own fixed test passes first (case 11). Every case reads `NOT_RUN` until the parts are built and run.
 
 In short, the cases cover:
 
@@ -321,5 +321,6 @@ Each is a draft for 49GAION, in `upstream/PROPOSALS.md`, not yet proposed. None 
 |---|---|---|
 | v0.1.0 | 2026-10-20 | First blueprint of 49GAION Organisation Design and Delivery, the first assembly of the Library (`49GAION/DR-0025`), in its own repository (`decisions/DR-0001`): the parts by pin at the Library register `32734f1`, the steps, the connections, the input and the output, what the product sets, the ways to use it, the decisions by position, the shared test TEST-DESIGN-CHAIN v2, and what must hold before the first real run |
 | v0.1.1 | 2026-10-25 | The pins of Target Operating Model, Process and Position Design and Delivery and Implementation, and of the sockets contract drafts, move to the parts' own mother repositories at their merged commits (`49GAION/DR-0044`; `decisions/DR-0003`); the Library register pin moves to `26d7443`. Every path, version and SHA-256 unchanged; no rule changes |
+| v0.1.2 | 2026-10-29 | Released on the governing seat's word (`decisions/DR-0005`): it carries the records since v0.1.1, `decisions/DR-0002` (the readings of `49GAION/DR-0041`) and `decisions/DR-0004` (positions only, `49GAION/DR-0048`, `DR-0049`). The pins of the four parts move to their releases of 29 October 2026 at their merged commits (Source Lifecycle v0.1.5, Target Operating Model v0.6.2, Process and Position Design v0.5.2, Delivery and Implementation v0.2.2), equal to the Library register at `d44e4fc`; the contract pins are unchanged; the Protocol pin moves to the Operating Protocol `v2.1.0`. No other rule changes. |
 
-*49GAION Organisation Design and Delivery · product blueprint v0.1.1 · Powered by 49GAION*
+*49GAION Organisation Design and Delivery · product blueprint v0.1.2 · Powered by 49GAION*
