@@ -9,5 +9,6 @@ One `DR-####` file per decided subject, numbered in order. A record file never c
 | [`DR-0003`](DR-0003-the-pins-move-to-the-mother-repositories.md) | 2026-10-25 | Organisation Design and Delivery product: the pins of three parts move to their mother repositories (49GAION/DR-0044) | in force on merge |
 | [`DR-0004`](DR-0004-positions-only.md) | 2026-10-28 | Organisation Design and Delivery product: positions only, brought into line with 49GAION/DR-0048 and DR-0049 | in force on merge |
 | [`DR-0005`](DR-0005-release-v0-1-2.md) | 2026-10-29 | Organisation Design and Delivery product: release `v0.1.2`, carrying the records since `v0.1.1`, and the parts' pins at their releases of 29 October 2026 | in force on merge |
+| [`DR-0006`](DR-0006-release-v0-1-3.md) | 2026-10-29 | Organisation Design and Delivery product: release `v0.1.3`, the parts' pins at their releases under 49GAION/DR-0052, and the Protocol pin at `v2.2.0` | in force on merge |
 
 *Powered by 49GAION*

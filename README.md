@@ -26,7 +26,7 @@ The one-page summary is at the top of the blueprint.
 
 | Path | What it is |
 |---|---|
-| [`blueprint/PRODUCT-BLUEPRINT.md`](blueprint/PRODUCT-BLUEPRINT.md) | the product blueprint, `v0.1.2`: the parts by pin, how they combine and work, the input, the output, what it is for, what it sets, the ways to use it, the shared test |
+| [`blueprint/PRODUCT-BLUEPRINT.md`](blueprint/PRODUCT-BLUEPRINT.md) | the product blueprint, `v0.1.3`: the parts by pin, how they combine and work, the input, the output, what it is for, what it sets, the ways to use it, the shared test |
 | [`pins/PINS.json`](pins/PINS.json) | the four parts and the contracts, each by repository, path, version, commit and SHA-256 |
 | [`tools/check_pins.py`](tools/check_pins.py) | reads every pin back at its commit and checks its SHA-256 (TEST-DESIGN-CHAIN v2, case 10) |
 | [`decisions/`](decisions/) | the decision records of this repository |
